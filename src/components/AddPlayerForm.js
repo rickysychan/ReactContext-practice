@@ -4,11 +4,11 @@ import { Consumer } from "../components/context";
 const AddPlayerForm = () => {
   return (
     <Consumer>
-      {context => {
+      {({ addPlayer }) => {
         const playerInput = React.createRef();
         const handleSubmit = e => {
           e.preventDefault();
-          context.addPlayer(playerInput.current.value);
+          addPlayer(playerInput.current.value);
           e.currentTarget.reset();
         };
         return (
